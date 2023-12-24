@@ -201,6 +201,10 @@ Download redirected to host: cloud-images.ubuntu.com
 ubuntu/jammy64 (virtualbox, 20231215.0.0)
 ```
 
+## Behind the scene, vagrant stores the boxes (including the downloaded file) at below location:
+### MAC/Linux :  ˜/.vagrant.d/boxes
+### Windows : C:/Users/USERNAME/.vagrant.d/boxes
+
 ## List name of machines(nodes)
 ### for a simple (single node) setup, the name of machine will be default.
 ```bash
@@ -268,9 +272,12 @@ Now as you are in the ubuntu VM, you can work on (configure, download software, 
 # Cleanup
 
 ## vagrant suspend / resume
-### Suspends a machine (with all state preserved till that time) which will no longer use CPU &RAM (will still use disk space). You can resume it again at a later stage.
-### A suspend effectively saves the exact point-in-time state of the machine, so that when you resume it later, it begins running immediately from that point, rather than doing a full boot.
+### Suspends a machine (with all state preserved till that time) which will no longer use CPU &RAM (will still use disk space). You can resume it again at a later stage.A suspend effectively saves the exact point-in-time state of the machine, so that when you resume it later, it begins running immediately from that point, rather than doing a full boot.
 ### See more at https://developer.hashicorp.com/vagrant/docs/cli/suspend & https://developer.hashicorp.com/vagrant/docs/cli/resume
+
+## vagrant halt
+### Fully shuts down the machine
+### See more at https://developer.hashicorp.com/vagrant/docs/cli/halt
 
 ## vagrant destroy
 ### This command stops the running machine Vagrant is managing and destroys all resources that were created during the machine creation process. After running this command, your computer should be left at a clean state, as if you never created the guest machine in the first place.
